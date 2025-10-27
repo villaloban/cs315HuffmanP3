@@ -55,9 +55,9 @@ void HuffmanTree::assignCodesDFS(const TreeNode *n, std::string &prefix, std::ve
 
     if (n->leftSubtree() == nullptr && n->rightSubtree() == nullptr) {
         if (prefix == "")
-            out.push_back(std::make_pair(n->value(), "0"));
+            out.emplace_back(n->value(), "0");
         else
-            out.push_back(std::make_pair(n->value(), prefix));
+            out.emplace_back(n->value(), prefix);
     }
 
     prefix.push_back('0');
